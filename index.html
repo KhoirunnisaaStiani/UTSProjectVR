@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- MODEL 3D -->
+      <a-assets>
+        <a-asset-item id="tamanGLTF" src="assets/taman_air_terjun/scene.gltf"></a-asset-item>
+        <a-asset-item id="jembatanGLTF" src="assets/jembatan/scene.gltf"></a-asset-item>
+        <a-asset-item id="burungGLTF" src="assets/burung/scene.gltf"></a-asset-item>
+        <a-asset-item id="perahuGLTF" src="assets/perahu/scene.gltf"></a-asset-item>
+        <a-asset-item id="ikankoiGLTF" src="assets/ikan_koi/scene.gltf"></a-asset-item>
+        <a-asset-item id="kurakuraGLTF" src="assets/kurakura/scene.gltf"></a-asset-item>
+        <a-asset-item id="terariumGLTF" src="assets/komputer_terarium/scene.gltf"></a-asset-item>
+        <audio id="arter" src="assets/suara air terjun.mp3"></audio>
+      </a-assets>
+
+      <!-- CAMERA -->
+      <a-entity id="CAMERA" position="0 1 5">  
+        <a-camera>
+          <a-cursor color="white"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+       <!-- AUDIO -->
+       <a-entity sound="src: #arter; autoplay: true; loop: true"></a-entity>
+
+      <!-- LATAR BELAKANG TAMAN AIR TERJUN -->
+      <a-entity id="TAMAN" gltf-model="#tamanGLTF" position="0 0 0" scale="200 200 200"></a-entity>
+
+      <!--JEMBATAN-->
+      <a-entity id="JEMBATAN" gltf-model="#jembatanGLTF" position="-0.45 -1.73 -4.75" scale="1 1 1.5"></a-entity>
+
+      <!--BURUNG-->
+      <a-entity id="BURUNG" gltf-model="#burungGLTF" position="-11.9 4.3 5.9" rotation="5 180 20" scale="1 1 1"></a-entity>
+
+      <!--IKAN KOI-->
+      <a-entity id="IKAN KOI 1" gltf-model="#ikankoiGLTF" position="-10.9 -3.2 21.2" scale="0.5 0.5 0.5" rotation="0 180 0" 
+      animation__swim="dir: alternate; dur: 6000; easing: easeInOutSine; loop: true; property: position; to: -9.8 -3.2 22" 
+      animation__rotate="dir: alternate; dur: 6000; easing: easeInOutSine; loop: true; property: rotation; to: 0 130 0"></a-entity>
+      
+      <a-entity id="IKAN KOI 2" gltf-model="#ikankoiGLTF" position="-12.2 -2.23 23" scale="0.5 0.5 0.5" rotation="0 264 0" 
+      animation__swim="dir: alternate; dur: 6000; easing: easeInOutSine; loop: true; property: position; to: -11 -2.23 22" 
+      animation__rotate="dir: alternate; dur: 6000; easing: easeInOutSine; loop: true; property: rotation; to: 0 225 0"></a-entity>
+
+      <!--PERAHU-->
+      <a-entity id="PERAHU" gltf-model="#perahuGLTF" position="-1.5 -4.3 20" scale="0.015 0.02 0.015" rotation="-2 -110 10"
+      animation__mouseenter="property: position; to: -1.5 -4.3 18; dir: alternate; dur: 4000; loop: true; startEvents: mouseenter; easing: easeInOutSine" 
+      animation__mouseleave="property: position; to: -1.5 -4.3 20; startEvents: mouseleave; dur: 1000"></a-entity>
+
+      <!--KURA KURA--> 
+      <a-entity id="KURAKURA" gltf-model="#kurakuraGLTF" position="-17.21766 -5.984 12" scale="0.08 0.08 0.08" 
+      animation__renang="dir: alternate; dur: 5000; easing: easeInOutSine; loop: true; property: position; to: -18 -5.984 14" rotation="1 300 -2"></a-entity>
+
+      <!--TERARIUM KOMPUTER-->
+      <a-entity id="TERRARIUM" gltf-model="#terariumGLTF" position="7 2 16.6" rotation="0 220 0"></a-entity>
+
+      </a-scene>
+</body>
+</html>
